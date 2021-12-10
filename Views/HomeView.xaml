@@ -1,0 +1,139 @@
+﻿<UserControl x:Class="MVVM_2.Views.HomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MVVM_2.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="900">
+    <StackPanel>
+        <StackPanel.Resources>
+            <Style TargetType="TextBlock" BasedOn="{StaticResource EstiloTextBlock1}"/>
+            <Style TargetType="Button" BasedOn="{StaticResource EstiloBoton1}"/>
+            <Style TargetType="TextBox" BasedOn="{StaticResource EstiloTextBox1}" />
+        </StackPanel.Resources>
+        <Grid Margin="10" Width="850">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Atributo 1" Grid.Row="0" Grid.Column="0" />
+            <TextBlock Text="Atributo 2" Grid.Row="1" Grid.Column="0" />
+            <TextBlock Text="Atributo 3" Grid.Row="2" Grid.Column="0" />
+            <TextBlock Text="Atributo 4" Grid.Row="3" Grid.Column="0" />
+            <TextBlock Text="Atributo 5" Grid.Row="4" Grid.Column="0" />
+            <TextBlock Text="Atributo 6" Grid.Row="5" Grid.Column="0" />
+
+            <TextBox x:Name="atributo1" Grid.Row="0" Grid.Column="1" 
+                     IsEnabled="{Binding Habilitar}"
+                     Text="{Binding AtributosModel.Atributo1}"/>
+
+            <TextBox x:Name="atributo2" Grid.Row="1" Grid.Column="1" 
+                     IsEnabled="{Binding Habilitar}"
+                     Text="{Binding AtributosModel.Atributo2}"/>
+
+            <TextBox x:Name="atributo3" Grid.Row="2" Grid.Column="1" 
+                     IsEnabled="{Binding Habilitar}"
+                     Text="{Binding AtributosModel.Atributo3}"/>
+
+            <TextBox x:Name="atributo4" Grid.Row="3" Grid.Column="1" 
+                     IsEnabled="{Binding Habilitar}"
+                     Text="{Binding AtributosModel.Atributo4}"/>
+
+            <TextBox x:Name="atributo5" Grid.Row="4" Grid.Column="1" 
+                     IsEnabled="{Binding Habilitar}"
+                     Text="{Binding AtributosModel.Atributo5}"/>
+
+
+            <TextBox x:Name="atributo6" Grid.Row="5" Grid.Column="1" 
+                     IsEnabled="{Binding Habilitar}"
+                     Text="{Binding AtributosModel.Atributo6}"/>
+
+
+            <Button Grid.Row="0" Grid.Column="2"
+                    Content="MOSTRAR/OCULTAR"
+                    Command="{Binding Apartado3Command}"
+                    CommandParameter="{Binding ElementName=atributo1}"/>
+
+            <Button Grid.Row="1" Grid.Column="2"
+                    Content="MOSTRAR/OCULTAR"
+                    Command="{Binding Apartado3Command}"
+                    CommandParameter="{Binding ElementName=atributo2}"/>
+
+            <Button Grid.Row="2" Grid.Column="2"
+                    Content="MOSTRAR/OCULTAR"
+                    Command="{Binding Apartado3Command}"
+                    CommandParameter="{Binding ElementName=atributo3}"/>
+
+
+            <Button Grid.Row="3" Grid.Column="2"
+                    Content="MOSTRAR/OCULTAR"
+                    Command="{Binding Apartado3Command}"
+                    CommandParameter="{Binding ElementName=atributo4}"/>
+
+
+            <Button Grid.Row="4" Grid.Column="2"
+                    Content="MOSTRAR/OCULTAR"
+                    Command="{Binding Apartado3Command}"
+                    CommandParameter="{Binding ElementName=atributo5}"/>
+
+
+            <Button Grid.Row="5" Grid.Column="2"
+                    Content="MOSTRAR/OCULTAR"
+                    Command="{Binding Apartado3Command}"
+                    CommandParameter="{Binding ElementName=atributo6}"/>
+
+
+            <Button Grid.Row="0" Grid.Column="3"
+                    Content="COMPROBAR"
+                    Command="{Binding Apartado4Command}"
+                    CommandParameter="{Binding ElementName=atributo1}"/>
+
+
+            <Button Grid.Row="1" Grid.Column="3"
+                    Content="COMPROBAR"
+                    Command="{Binding Apartado4Command}"
+                    CommandParameter="{Binding ElementName=atributo2}"/>
+
+            <Button Grid.Row="2" Grid.Column="3"
+                    Content="COMPROBAR"
+                    Command="{Binding Apartado4Command}"
+                    CommandParameter="{Binding ElementName=atributo3}"/>
+
+            <Button Grid.Row="3" Grid.Column="3"
+                    Content="COMPROBAR"
+                    Command="{Binding Apartado4Command}"
+                    CommandParameter="{Binding ElementName=atributo4}"/>
+
+            <Button Grid.Row="4" Grid.Column="3" 
+                    Content="COMPROBAR"
+                    Command="{Binding Apartado4Command}"
+                    CommandParameter="{Binding ElementName=atributo5}"/>
+
+            <Button Grid.Row="5" Grid.Column="3"
+                    Content="COMPROBAR"
+                    Command="{Binding Apartado4Command}"
+                    CommandParameter="{Binding ElementName=atributo6}"/>
+
+        </Grid>
+        <Button Content="HABILITAR/DESHABILITAR" Width="300" Height="40"
+                Margin="10" Command="{Binding Apartado1Command}"/>
+
+        <Button Content="BORRAR TODO" Width="300" Height="40"
+                Margin="10" Command="{Binding Apartado2Command}"/>
+
+        <Button Content="GUARDAR TODO" Width="300" Height="40"
+                Margin="10"/>
+
+    </StackPanel>
+</UserControl>
